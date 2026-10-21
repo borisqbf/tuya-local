@@ -1,0 +1,99 @@
+name: ECO Pergola
+products:
+  - id: jvfh9amnnulisbiu
+    name: ECO Pergola
+entities:
+  - entity: cover
+    class: awning
+    dps:
+      - id: 2
+        type: string
+        name: control
+        mapping:
+          - dps_val: open
+            value: open
+          - dps_val: close
+            value: close
+          - dps_val: stop
+            value: stop
+      - id: 1
+        type: string
+        name: open
+        mapping:
+          - dps_val: opened
+            value: false
+          - dps_val: closed
+            value: true
+          - dps_val: stop
+            value: false
+
+  - entity: switch
+    name: Light 1
+    dps:
+      - id: 104
+        type: boolean
+        name: switch
+
+  - entity: switch
+    name: Light 2
+    dps:
+      - id: 111
+        type: boolean
+        name: switch
+
+  - entity: select
+    name: Light 1 Colour Temperature
+    dps:
+      - id: 108
+        type: string
+        name: option
+        mapping:
+          - dps_val: White_Light
+            value: Cool white
+          - dps_val: Warm_Light
+            value: Warm white
+
+  - entity: select
+    name: Light 2 Colour Temperature
+    dps:
+      - id: 107
+        type: string
+        name: option
+        mapping:
+          - dps_val: Green
+            value: Cool white
+          - dps_val: Red
+            value: Warm white
+
+  - entity: number
+    name: Light 1 Luminance
+    optional: true
+    dps:
+      - id: 103
+        type: integer
+        name: value
+        range:
+          min: 0
+          max: 1000
+          step: 1
+
+  - entity: number
+    name: Light 2 Luminance
+    optional: true
+    dps:
+      - id: 109
+        type: integer
+        name: value
+        range:
+          min: 0
+          max: 1000
+          step: 1
+
+  - entity: binary_sensor
+    class: moisture
+    name: Rain Sensor
+    optional: true
+    dps:
+      - id: 24
+        type: boolean
+        name: sensor
